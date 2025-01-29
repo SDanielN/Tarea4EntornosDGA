@@ -8,23 +8,19 @@ public class Library {
         books = new ArrayList<>();
     }
 
-    // Funcionalidad para agregar un libro
+    // Funcionalidad mejorada para agregar un libro
     public void addBook(Book book) {
-        books.add(book);
-        System.out.println("Libro agregado: " + book)import java.util.ArrayList;
-import java.util.List;
+        if (book == null) {
+            System.out.println("❌ Error: No se puede agregar un libro nulo.");
+            return;
+        }
 
-public class Library {
-    private List<Book> books;
-
-    public Library() {
-        books = new ArrayList<>();
-    }
-
-    // Funcionalidad para agregar un libro
-    public void addBook(Book book) {
-        books.add(book);
-        System.out.println("Libro agregado: " + book);
+        if (books.contains(book)) {
+            System.out.println("⚠️ El libro ya existe en la colección: " + book);
+        } else {
+            books.add(book);
+            System.out.println("✅ Libro agregado con éxito: " + book);
+        }
     }
 
     // Funcionalidad para listar todos los libros
