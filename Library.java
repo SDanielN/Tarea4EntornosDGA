@@ -31,5 +31,10 @@ public class Library {
         }
         return null;
     }
+// Funcionalidad para contar los libros en la biblioteca
+public int countBooks() {
+return books.size();
+
 }
+
 
