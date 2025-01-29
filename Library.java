@@ -8,11 +8,20 @@ public class Library {
         books = new ArrayList<>();
     }
 
-    // Funcionalidad para agregar un libro
-    public void addBook(Book book) {
-        books.add(book);
-        System.out.println("Libro agregado: " + book);
+   // Funcionalidad mejorada para agregar un libro
+public void addBook(Book book) {
+    if (book == null) {
+        System.out.println("❌ Error: No se puede agregar un libro nulo.");
+        return;
     }
+
+    if (books.contains(book)) {
+        System.out.println("⚠️ El libro ya existe en la colección: " + book);
+    } else {
+        books.add(book);
+        System.out.println("✅ Libro agregado con éxito: " + book);
+    }
+}
 
     // Funcionalidad para listar todos los libros
     public void listBooks() {
@@ -31,10 +40,5 @@ public class Library {
         }
         return null;
     }
-// Funcionalidad para contar los libros en la biblioteca
-public int countBooks() {
-return books.size();
 
 }
-
-
