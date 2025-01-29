@@ -9,7 +9,14 @@ public class Main {
         // Listar los libros
         library.listBooks();
 
-        // Buscar libros
+        // Buscar y eliminar un libro
+        System.out.println("\nEliminando libro...");
+        library.removeBookByTitle("1984");
+
+        // Listar los libros después de la eliminación
+        library.listBooks();
+
+        // Intentar buscar un libro que ya fue eliminado
         Book foundBook = library.findBookByTitle("1984");
         if (foundBook != null) {
             System.out.println("Libro encontrado: " + foundBook);
