@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Library {
     private List<Book> books;
@@ -24,8 +26,18 @@ public class Library {
     }
 
     // Funcionalidad para listar todos los libros
-    public void listBooks() {
-        System.out.println("Lista de libros:");
+   public void listBooks() {
+        System.out.println("Lista de libros ordenados por título:");
+        
+        // Ordenar la lista de libros por título
+        Collections.sort(books, new Comparator<Book>() {
+            @Override
+            public int compare(Book book1, Book book2) {
+                return book1.getTitle().compareToIgnoreCase(book2.getTitle());
+            }
+        });
+
+        // Mostrar los libros ordenados
         for (Book book : books) {
             System.out.println(book);
         }
